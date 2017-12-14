@@ -2,13 +2,11 @@ var firstNameGlobal = document.getElementById("fName");
 var lastNameGlobal = document.getElementById("lName");
 var generateButton = document.getElementById("generateJoke");
 
-var handleResult = function (data) {
-    console.log(data.value.joke);
-    document.getElementById("joke").innerHTML = data.value.joke;
-};
+function init() {
+    generateButton.addEventListener("click", generateJoke);
+}
 
-
-var generateJoke = function () {
+function generateJoke() {
 
     var firstName = firstNameGlobal.value;
     var lastName = lastNameGlobal.value;
@@ -18,8 +16,18 @@ var generateJoke = function () {
         + "&lastName=" + lastName;
 
     makeAjaxRequest(url, handleResult);
-};
-generateButton.addEventListener("click", generateJoke);
+}
+
+function handleResult (data) {
+
+    console.log(data.value.joke);
+    document.getElementById("joke").innerHTML = data.value.joke;
+}
+
+init();
+
+
+
 
 
 
