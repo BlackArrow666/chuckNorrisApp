@@ -1,5 +1,5 @@
-var firstName = document.getElementById("fName");
-var lastName = document.getElementById("lName");
+var firstNameGlobal = document.getElementById("fName");
+var lastNameGlobal = document.getElementById("lName");
 var generateButton = document.getElementById("generateJoke");
 
 var handleResult = function (data) {
@@ -10,8 +10,8 @@ var handleResult = function (data) {
 
 var generateJoke = function () {
 
-    var firstName = "Ionica";
-    var lastName = "Petrescu";
+    var firstName = firstNameGlobal.value;
+    var lastName = lastNameGlobal.value;
 
     var url = "http://api.icndb.com/jokes/random?" +
         "firstName=" + firstName
