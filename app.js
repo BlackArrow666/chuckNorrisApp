@@ -1,4 +1,13 @@
-console.log("Hello");
+var firstName = document.getElementById("fName");
+var lastName = document.getElementById("lName");
+var generateButton  = document.getElementById("generateJoke");
+
+var generateJoke = function () {
+    alert("Salut!");
+};
+
+
+generateButton.addEventListener("click", generateJoke);
 
 var handleResult = function(data){
     console.log(data.value.joke);
